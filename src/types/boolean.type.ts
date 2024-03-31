@@ -7,8 +7,8 @@ booleanValue = false;
 booleanValue = typeof "abc" === "string";
 booleanValue = 1 > 0;
 
-booleanValue = {};
-booleanValue = "New York";
+// booleanValue = {};
+// booleanValue = "New York";
 
-booleanValue = null;
-booleanValue = undefined;
+// booleanValue = null;
+// booleanValue = undefined;

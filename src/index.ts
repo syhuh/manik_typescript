@@ -1,11 +1,23 @@
-let number: number = 100;
+let bigInt1 = BigInt(945845);
 
-number = 28.7;
+let bigInt2 = 123456545n;
+console.log(bigInt1);
 
-number = -300;
+const safeInt = Number.MAX_SAFE_INTEGER;
+console.log(safeInt);
 
-number = Infinity * 0.01;
+const safeIntPlusOne = safeInt + 1;
+const safeIntPlusTwo = safeInt + 2;
 
-number = parseInt("12");
+console.log(safeIntPlusOne);
+console.log(safeIntPlusTwo);
 
-number = "121";
+console.log(safeIntPlusOne === safeIntPlusTwo);
+
+let a: bigint = BigInt(1234548);
+let b: bigint = 23456465n;
+let c: bigint = a - b;
+
+// let e: bigint = 24551.2n;
+// let f = Math.log(a);
+// console.log(f);
