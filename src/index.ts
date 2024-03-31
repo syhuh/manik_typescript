@@ -1,14 +1,11 @@
-let booleanValue: boolean = true;
+let number: number = 100;
 
-// Literal values
-booleanValue = false;
+number = 28.7;
 
-// expression of true or false
-booleanValue = typeof "abc" === "string";
-booleanValue = 1 > 0;
+number = -300;
 
-booleanValue = {};
-booleanValue = "New York";
+number = Infinity * 0.01;
 
-booleanValue = null;
-booleanValue = undefined;
+number = parseInt("12");
+
+number = "121";
