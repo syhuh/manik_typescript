@@ -1,3 +1,9 @@
-let firstName: any = "Mark";
-firstName = 123;
-firstName = [5, 4, 8, 4];
+function multiByTwo(number: unknown) {
+  if (typeof number === "number") {
+    return number * 2;
+  }
+  return "Please provide a valid number";
+}
+
+console.log(multiByTwo(4));
+console.log(multiByTwo("John"));
