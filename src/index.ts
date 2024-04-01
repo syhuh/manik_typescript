@@ -1,15 +1,25 @@
-let firstName = "John";
+let person = {
+  name: "Mark",
+  age: 24,
+};
 
-// firstName = 25;
+let cat: {
+  color: string;
+  brand: string;
+} = {
+  color: "black",
+  brand: "BMW",
+};
 
-const number = 85;
+let article: {
+  author: string;
+  title: string;
+  content: string;
+  image?: string;
+};
 
-let numberTwo = 90;
-
-let finalResult;
-
-function addNumbers(a: number, b: number) {
-  return a + b;
-}
-
-finalResult = addNumbers(10, 15);
+article = {
+  author: "John",
+  title: "Hello TypeScript",
+  content: "This is a short article about TypeScript",
+};
