@@ -1,25 +1,28 @@
-type Caterer = {
+type Dog = {
   name: string;
-  address: string;
-  phone: number;
+  barks: boolean;
+  wags: boolean;
 };
 
-type Airplane = {
-  model: string;
-  fligntNumber: string;
-  timeOfDeparture: Date;
-  timeOfArrival: Date;
-  careter: Caterer;
+type Cat = {
+  name: string;
+  purrs: boolean;
 };
 
-const airplane = {
-  model: "Airbus A380",
-  fligntNumber: "A2201",
-  timeOfDeparture: new Date(),
-  timeOfArrival: new Date(),
-  careter: {
-    name: "Special Food Ltd",
-    address: "484, Some Street, New York",
-    phone: 1452125,
-  },
+type DogAndCatUnion = Dog | Cat;
+
+let dog: DogAndCatUnion = {
+  name: "Buddy",
+  barks: true,
+  wags: true,
+};
+
+let cat: DogAndCatUnion = {
+  name: "Bella",
+  purrs: true,
+};
+
+let dogAndCat: DogAndCatUnion = {
+  name: "Hybrid",
+  barks: true,
 };
