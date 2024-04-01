@@ -1,25 +1,12 @@
-let person = {
-  name: "Mark",
-  age: 24,
-};
-
-let cat: {
-  color: string;
-  brand: string;
-} = {
-  color: "black",
-  brand: "BMW",
-};
-
-let article: {
+type Article = {
   author: string;
   title: string;
   content: string;
   image?: string;
 };
 
-article = {
+let article: Article = {
   author: "John",
-  title: "Hello TypeScript",
-  content: "This is a short article about TypeScript",
+  title: "John's Article",
+  content: "Content",
 };
