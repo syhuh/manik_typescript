@@ -1,61 +1,15 @@
-const a: number[] = [1, 2, 3];
+// firstname, lastname, age
+let person: [string, string, number?];
 
-const b: Array<string> = ["a", "b", "c"];
+person = ["John", "Doe"];
 
-const c: (number | string)[] = [1, 2, 3, "a", "b"];
+// [
+//   NumberOfStudents: Number,
+//   passing: boolean,
+//   'John', 'Stella'
+// ]
 
-type Airplane = {
-  flightNumber: string;
-  airplaneModel: string;
-  dateOfDeparture: string;
-  timeOfDeparture: string;
-  from: string;
-  to: string;
-  seats: {
-    [key: string]: string;
-  };
-};
+type listOfStudents = [number, boolean, ...string[]];
 
-type Airplanes = Airplane[];
-
-const airplanes: Airplanes = [
-  {
-    flightNumber: "SG102",
-    airplaneModel: "A380",
-    dateOfDeparture: "2024/4/5",
-    timeOfDeparture: "10:00 AM",
-    from: "JFA",
-    to: "FRA",
-    seats: {
-      A01: "Frank",
-      A02: "John",
-      A03: "Smith",
-    },
-  },
-  {
-    flightNumber: "SG103",
-    airplaneModel: "A380",
-    dateOfDeparture: "2024/4/5",
-    timeOfDeparture: "10:00 AM",
-    from: "JFA",
-    to: "FRA",
-    seats: {
-      A01: "Frank",
-      A02: "John",
-      A03: "Smith",
-    },
-  },
-  {
-    flightNumber: "SG104",
-    airplaneModel: "A380",
-    dateOfDeparture: "2024/4/5",
-    timeOfDeparture: "10:00 AM",
-    from: "JFA",
-    to: "FRA",
-    seats: {
-      A01: "Frank",
-      A02: "John",
-      A03: "Smith",
-    },
-  },
-];
+const passingStudents: listOfStudents = [3, true, "John", "Stella", "Mark"];
+const failingStudents: listOfStudents = [1, false, "Scott"];
