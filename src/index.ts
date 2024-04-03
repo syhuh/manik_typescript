@@ -1,18 +1,9 @@
-let loggedInUsername: string;
+const addnumbers = (): void => {
+  console.log(2 + 4);
+};
+addnumbers();
 
-const users = [
-  { name: "Obby", age: 12 },
-  { name: "Hina", age: 32 },
-];
-
-const loggedInUser = users.find((user) => user.name === loggedInUsername);
-
-console.log(loggedInUser.name);
-
-// let saveButton:HTMLElement = document.getElementById("save")!;
-
-let saveButton: HTMLElement | null = document.getElementById("save");
-
-if (saveButton !== null) {
-  // do something
-}
+const throwNewError = (): never => {
+  throw new Error("Your Program Terminated because of error");
+};
+throwNewError();
