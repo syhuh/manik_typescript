@@ -1,17 +1,17 @@
-import { Roles } from "./roles";
+// import { Roles } from "./roles";
 
-type Person = {
-  name: string;
-  email: string;
-  password: string;
-  role: Roles;
-};
+// type Person = {
+//   name: string;
+//   email: string;
+//   password: string;
+//   role: Roles;
+// };
 
-const person: Person = {
-  name: "John",
-  email: "john@gmail.com",
-  password: "password",
-  role: Roles.editor,
-};
+// const person: Person = {
+//   name: "John",
+//   email: "john@gmail.com",
+//   password: "password",
+//   role: Roles.editor,
+// };
 
-console.log(person);
+// console.log(person);

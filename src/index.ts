@@ -1,38 +1,32 @@
-enum Type {
-  national = "national",
-  academic = "academic",
-  public = "public",
-}
+type TypeOfLibrary = "national" | "public" | "private";
 
-type book = {
+type Book = {
   title: string;
   pages: number;
   isbn: string;
 };
 
-type genres = string[];
-
-type member = {
+type Member = {
   name: string;
   phone: string;
-  email?: string;
+  [key: string]: string;
 };
 
-type library = {
+type Library = {
   name: string;
   address: string;
   numberOfBooks: number;
-  type: Type;
-  books: book[];
-  genres: genres;
+  type: TypeOfLibrary;
+  books: Book[];
+  genres: string[];
   members: member[];
 };
 
-const library: library = {
+const library: Library = {
   name: "New York Library",
   address: "24 Some Street, New York",
   numberOfBooks: 1254,
-  type: Type.national,
+  type: "national",
   books: [
     {
       title: "Harry Potter",
