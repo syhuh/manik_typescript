@@ -1,9 +1,17 @@
-const addnumbers = (): void => {
-  console.log(2 + 4);
-};
-addnumbers();
+import { Roles } from "./roles";
 
-const throwNewError = (): never => {
-  throw new Error("Your Program Terminated because of error");
+type Person = {
+  name: string;
+  email: string;
+  password: string;
+  role: Roles;
 };
-throwNewError();
+
+const person: Person = {
+  name: "John",
+  email: "john@gmail.com",
+  password: "password",
+  role: Roles.editor,
+};
+
+console.log(person);
