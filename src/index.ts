@@ -1,15 +1,13 @@
-// firstname, lastname, age
-let person: [string, string, number?];
+let number: readonly number[] = [1, 2, 3];
 
-person = ["John", "Doe"];
+number.push(4);
 
-// [
-//   NumberOfStudents: Number,
-//   passing: boolean,
-//   'John', 'Stella'
-// ]
+type ReadOnlyPerson = readonly [string, string, number];
 
-type listOfStudents = [number, boolean, ...string[]];
+let person: ReadOnlyPerson = ["John", "Doe", 30];
 
-const passingStudents: listOfStudents = [3, true, "John", "Stella", "Mark"];
-const failingStudents: listOfStudents = [1, false, "Scott"];
+type a = Readonly<string[]>;
+type b = Readonly<[string, string, number]>;
+
+let x: a = ["John", "Doe", 30];
+let y: b = ["Smith", "Lee", 40];
