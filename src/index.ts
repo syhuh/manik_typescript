@@ -1,13 +1,18 @@
-let number: readonly number[] = [1, 2, 3];
+let loggedInUsername: string;
 
-number.push(4);
+const users = [
+  { name: "Obby", age: 12 },
+  { name: "Hina", age: 32 },
+];
 
-type ReadOnlyPerson = readonly [string, string, number];
+const loggedInUser = users.find((user) => user.name === loggedInUsername);
 
-let person: ReadOnlyPerson = ["John", "Doe", 30];
+console.log(loggedInUser.name);
 
-type a = Readonly<string[]>;
-type b = Readonly<[string, string, number]>;
+// let saveButton:HTMLElement = document.getElementById("save")!;
 
-let x: a = ["John", "Doe", 30];
-let y: b = ["Smith", "Lee", 40];
+let saveButton: HTMLElement | null = document.getElementById("save");
+
+if (saveButton !== null) {
+  // do something
+}

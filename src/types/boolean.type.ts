@@ -1,14 +1,14 @@
-let booleanValue: boolean = true;
+// let booleanValue: boolean = true;
 
-// Literal values
-booleanValue = false;
+// // Literal values
+// booleanValue = false;
 
-// expression of true or false
-booleanValue = typeof "abc" === "string";
-booleanValue = 1 > 0;
+// // expression of true or false
+// booleanValue = typeof "abc" === "string";
+// booleanValue = 1 > 0;
 
-// booleanValue = {};
-// booleanValue = "New York";
+// // booleanValue = {};
+// // booleanValue = "New York";
 
-// booleanValue = null;
-// booleanValue = undefined;
+// // booleanValue = null;
+// // booleanValue = undefined;

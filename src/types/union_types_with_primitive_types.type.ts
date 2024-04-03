@@ -1,13 +1,13 @@
-type stringOrNumber = number | string;
+// type stringOrNumber = number | string;
 
-function addNumberOrString(a: stringOrNumber, b: stringOrNumber) {
-  if (typeof a === "number" && typeof b === "number") {
-    return a + b;
-  } else {
-    return a.toString() + b.toString();
-  }
-}
+// function addNumberOrString(a: stringOrNumber, b: stringOrNumber) {
+//   if (typeof a === "number" && typeof b === "number") {
+//     return a + b;
+//   } else {
+//     return a.toString() + b.toString();
+//   }
+// }
 
-console.log(addNumberOrString(5, 10));
-console.log(addNumberOrString("John", 10));
-console.log(addNumberOrString("Mark", null));
+// console.log(addNumberOrString(5, 10));
+// console.log(addNumberOrString("John", 10));
+// console.log(addNumberOrString("Mark", null));
