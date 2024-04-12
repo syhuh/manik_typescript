@@ -1,22 +1,22 @@
-type MyMap = {
-  <T, U>(array: T[], callback: (item: T) => U): U[];
-};
-
-const map: MyMap = (array, callback) => {
-  const result = [];
-
-  for (let i = 0; i < array.length; i++) {
-    const item = array[i];
-    result.push(callback(item));
+const map = <T, U>(array: T[], func: (item: T) => U) => {
+  // Check if the array is empty
+  if (array.length === 0) {
+    return array;
   }
 
+  // Create a new array to collect values
+  const result = [];
+
+  // Loop through each item and call the func
+  for (let i = 0; i < array.length; i++) {
+    result[i] = func(array[i]);
+  }
+
+  // return new array
   return result;
 };
 
-const numbers = [65, 44, 12, 4];
-const newArr = map(numbers, myfunction);
-console.log(newArr);
+let numbers = [4, 5, 6, 7, 8];
 
-function myfunction(num: number) {
-  return num * 10;
-}
+const converted = map(numbers, (num) => num.toString());
+console.log(converted);
