@@ -1,47 +1,29 @@
-type Reservation = {
-  departureDate: Date;
-  returnDate?: Date;
-  departingFrom: string;
-  destination: string;
-};
+function filter(array: any[], predicate: Function) {
+  let result = [];
 
-type Reserve = {
-  (
-    departureDate: Date,
-    returnDate: Date,
-    departingFrom: string,
-    destination: string,
-  ): Reservation | never;
-  (
-    departureDate: Date,
-    departingFrom: string,
-    destination: string,
-  ): Reservation | never;
-};
-
-const reserve: Reserve = (
-  departureDate: Date,
-  returnDateOrDepartingFrom: Date | string,
-  departingFromOrDestination: string,
-  destination?: string,
-) => {
-  if (returnDateOrDepartingFrom instanceof Date && destination) {
-    return {
-      departureDate,
-      returnDate: returnDateOrDepartingFrom,
-      departingFrom: departingFromOrDestination,
-      destination,
-    };
-  } else if (typeof returnDateOrDepartingFrom === "string") {
-    return {
-      departureDate,
-      departingFrom: returnDateOrDepartingFrom,
-      destination: departingFromOrDestination,
-    };
+  for (let i = 0; i < array.length; i++) {
+    const item = array[i];
+    if (predicate(item)) {
+      result.push(item);
+    }
   }
 
-  throw new Error("Please provide valid details to reserve a ticket.");
-};
+  return result;
+}
 
-console.log(reserve(new Date(), new Date(), "New York", "Washington"));
-console.log(reserve(new Date(), "New York", "Washington"));
+const numbers = [1, 2, 5, 7, 9, 10, 12];
+
+function greaterThanSeven(item: number) {
+  return item > 7;
+}
+
+console.log(filter(numbers, greaterThanSeven));
+
+const animals = ["cat", "dog", "rat", "lion"];
+
+function filterCats(item: string) {
+  return "cat";
+  // return item === "cat";
+}
+
+console.log(filter(animals, filterCats));
