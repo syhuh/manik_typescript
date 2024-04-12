@@ -1,38 +1,22 @@
-// type Filter = {
-//   <T>(array: T[], predicate: (item: T) => boolean): T[];
-// };
+type MyMap = {
+  <T, U>(array: T[], callback: (item: T) => U): U[];
+};
 
-// type Filter<T> = {
-//   (array: T[], predicate: (item: T) => boolean): T[];
-// };
-
-type Filter = <T>(array: T[], predicate: (item: T) => boolean) => T[];
-
-const filter: Filter = (array, predicate) => {
-  let result = [];
+const map: MyMap = (array, callback) => {
+  const result = [];
 
   for (let i = 0; i < array.length; i++) {
     const item = array[i];
-    if (predicate(item)) {
-      result.push(item);
-    }
+    result.push(callback(item));
   }
 
   return result;
 };
 
-const numbers = [1, 2, 5, 7, 9, 10, 12];
+const numbers = [65, 44, 12, 4];
+const newArr = map(numbers, myfunction);
+console.log(newArr);
 
-function greaterThanSeven(item: number) {
-  return item > 7;
+function myfunction(num: number) {
+  return num * 10;
 }
-
-console.log(filter(numbers, greaterThanSeven));
-
-const animals = ["cat", "dog", "rat", "lion"];
-
-function filterCats(item: string) {
-  return item === "cat";
-}
-
-console.log(filter(animals, filterCats));
