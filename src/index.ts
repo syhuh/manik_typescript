@@ -1,22 +1,22 @@
-const map = <T, U>(array: T[], func: (item: T) => U) => {
-  // Check if the array is empty
-  if (array.length === 0) {
-    return array;
+class Person {
+  name: string;
+  email: string;
+
+  constructor(name: string, email: string) {
+    this.name = name;
+    this.email = email;
   }
 
-  // Create a new array to collect values
-  const result = [];
-
-  // Loop through each item and call the func
-  for (let i = 0; i < array.length; i++) {
-    result[i] = func(array[i]);
+  greet() {
+    console.log(`Hello ${this.name}`);
   }
+}
 
-  // return new array
-  return result;
-};
+const person = new Person("John", "john@gmail.com");
+const person2 = new Person("Mark", "mark@gmail.com");
 
-let numbers = [4, 5, 6, 7, 8];
+console.log(person);
+console.log(person2);
 
-const converted = map(numbers, (num) => num.toString());
-console.log(converted);
+person.greet();
+person2.greet();
