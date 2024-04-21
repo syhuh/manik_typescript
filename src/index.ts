@@ -1,32 +1,22 @@
-class User {
-  name: string;
-  email: string;
-  age: number;
-
-  constructor(name: string, email: string, age: number) {
-    this.name = name;
-    this.email = email;
-    this.age = age;
-  }
-}
-
-class AdminUser extends User {
-  isAdmin: boolean = true;
-  reportingUsers: number;
-
+class Person {
   constructor(
-    name: string,
-    email: string,
-    age: number,
-    reportingUsers: number,
-  ) {
-    super(name, email, age);
-    this.reportingUsers = reportingUsers;
+    protected name: string,
+    public age: number,
+  ) {}
+
+  public getName() {
+    return this.name;
   }
 }
 
-const user: User = new User("John", "john@gmail.com", 30);
-const admin: AdminUser = new AdminUser("Mark", "mark@gmail.com", 40, 5);
+class Admin extends Person {
+  public returnName() {
+    return this.name;
+  }
+}
 
-console.log(user);
+let person: Person = new Person("John", 32);
+const admin: Admin = new Admin("Mark", 42);
+
+console.log(person);
 console.log(admin);
