@@ -13,10 +13,17 @@ class Person {
     }
     this._age = age;
   }
+
+  public get age() {
+    if (this._age === undefined) {
+      throw new Error("The age property has not been set as yet");
+    }
+
+    return this._age;
+  }
 }
 
 const person: Person = new Person("John");
-const mark: Person = new Person("Mark");
+person.age = 70;
 
-console.log(person);
-console.log(mark);
+console.log(person.age);
