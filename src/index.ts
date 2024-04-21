@@ -1,8 +1,18 @@
 class Person {
+  private testUsersAge(age: number) {
+    if (age < 0 || age > 200) {
+      throw new Error("Age must be between 0 and 200");
+    }
+    return age;
+  }
+
   constructor(
     private _name: string,
     private _age: number,
-  ) {}
+  ) {
+    this.testUsersAge(_age);
+    this._age = _age;
+  }
 
   public set name(name: string) {
     this._name = name;
@@ -13,9 +23,7 @@ class Person {
   }
 
   public set age(age: number) {
-    if (age < 0 || age > 200) {
-      throw new Error("Age must be between 0 and 200");
-    }
+    this.testUsersAge(age);
     this._age = age;
   }
 
@@ -29,7 +37,6 @@ class Person {
 }
 
 const person: Person = new Person("John", 220);
-person.age = 70;
-
+console.log(person);
 console.log(person.age);
 console.log(person.name);
