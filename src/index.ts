@@ -1,10 +1,15 @@
 class Person {
-  private _age: number | undefined;
+  constructor(
+    private _name: string,
+    private _age: number,
+  ) {}
 
-  constructor(private name: string) {}
+  public set name(name: string) {
+    this._name = name;
+  }
 
-  public getName() {
-    return this.name;
+  public get name() {
+    return this._name;
   }
 
   public set age(age: number) {
@@ -23,7 +28,8 @@ class Person {
   }
 }
 
-const person: Person = new Person("John");
+const person: Person = new Person("John", 220);
 person.age = 70;
 
 console.log(person.age);
+console.log(person.name);
