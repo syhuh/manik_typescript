@@ -1,22 +1,23 @@
 class Person {
   constructor(
-    protected name: string,
+    private name: string,
     public age: number,
-  ) {}
+  ) {
+    if (age < 0 || age > 200) {
+      throw new Error("Age must be between 0 and 200");
+    }
+  }
 
   public getName() {
     return this.name;
   }
 }
 
-class Admin extends Person {
-  public returnName() {
-    return this.name;
-  }
-}
+const person: Person = new Person("John", 45);
+const mark: Person = new Person("Mark", 35);
 
-let person: Person = new Person("John", 32);
-const admin: Admin = new Admin("Mark", 42);
+person.age = 210;
+mark.age = -10;
 
 console.log(person);
-console.log(admin);
+console.log(mark);
